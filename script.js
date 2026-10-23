@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Case Study Full-Page Turn System & Template Data Engine
   const projectsData = {
     'car-wrap': {
-      code: 'PRJ // 02',
+      code: 'PRJ // 05',
       clientTop: 'PORSCHE CAYMAN GT4',
       client: 'Motorsport Racing Team',
       year: '2026',
@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     toga: {
-      code: 'PRJ // 02',
+      code: 'PRJ // 03',
       clientTop: 'TOGA APP',
       client: 'Toga Mobile Platforms',
       year: '2026',
