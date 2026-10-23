@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logan O'Neill — Toga Case Study</title>
+  <!-- Favicon / Web Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261022_final">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: #070A18 !important;
+      color: #FFFFFF !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      min-height: 100% !important;
+      overflow-x: clip !important;
+      font-family: 'Montserrat', sans-serif !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .case-study-print-wrapper {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      background: #070A18;
+      position: relative;
+    }
+
+    /* Fixed/Sticky Top Control Bar */
+    .cs-top-bar {
+      position: sticky !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      z-index: 100 !important;
+      background: rgba(7, 10, 24, 0.88) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+      padding: 22px 64px !important;
+      box-sizing: border-box !important;
+    }
+
+    .cs-top-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+    }
+
+    .cs-article {
+      --article-pad-x: 64px;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 var(--article-pad-x) 120px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Hero Section - True Full Width */
+    .cs-hero-section {
+      padding: 70px 0 90px !important;
+      width: 100% !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+    }
+
+    .cs-hero-container,
+    .cs-hero-main {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: block !important;
+    }
+
+    .cs-hero-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: block !important;
+      grid-template-columns: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .cs-category-row {
+      width: auto !important;
+      max-width: 100% !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      margin-bottom: 28px !important;
+      gap: 12px !important;
+      box-sizing: border-box !important;
+    }
+
+    .cs-pill {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(0.82rem, 0.95vw, 0.9rem) !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      padding: 9px 22px !important;
+      border-radius: 9999px !important;
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      transition: background 0.2s ease, border-color 0.2s ease !important;
+    }
+
+    .cs-pill:hover {
+      background: transparent !important;
+      border-color: rgba(255, 255, 255, 0.45) !important;
+    }
+
+    .cs-hero-title {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(4.5rem, 15vw, 15rem) !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.04em !important;
+      line-height: 0.88 !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+      margin-bottom: 32px !important;
+      width: 100% !important;
+    }
+
+    .cs-hero-summary {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(1.15rem, 1.45vw, 1.35rem) !important;
+      font-weight: 400 !important;
+      line-height: 1.65 !important;
+      color: #FFFFFF !important;
+      width: 100% !important;
+      max-width: none !important;
+      margin-bottom: 48px !important;
+    }
+
+    .cs-meta-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 32px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-top: 36px !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.10) !important;
+    }
+
+    /* Common Section & Containers */
+    .cs-section {
+      padding: 100px 0 !important;
+      width: 100% !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+    }
+
+    .cs-section:last-of-type,
+    .cs-section:last-child,
+    .cs-article > section:last-child,
+    .cs-article > section:last-of-type,
+    #process,
+    .cs-process-section {
+      border-bottom: none !important;
+    }
+
+    .cs-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .cs-section-header {
+      width: 100% !important;
+      margin-bottom: 32px !important;
+    }
+
+    .cs-section-heading {
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem) !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.03em !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+      margin: 0 !important;
+      line-height: 1.1 !important;
+    }
+
+    /* Overview Section: 2-Column Responsive Layout */
+    .cs-overview-layout {
+      display: grid !important;
+      grid-template-columns: 1.15fr 0.85fr !important;
+      gap: 64px !important;
+      align-items: start !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .cs-overview-story {
+      max-width: 900px !important;
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 22px !important;
+      margin-top: 0 !important;
+    }
+
+    .cs-narrative-p {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(1.15rem, 1.45vw, 1.35rem) !important;
+      line-height: 1.65 !important;
+      color: rgba(255, 255, 255, 0.95) !important;
+      font-weight: 400 !important;
+      margin: 0 !important;
+    }
+
+    .cs-overview-media {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .cs-overview-frame {
+      width: 100% !important;
+      max-width: 100% !important;
+      border-radius: var(--radius-lg, 20px) !important;
+      overflow: hidden !important;
+      background: #F4F4F4 !important;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .cs-overview-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      max-height: 640px !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    /* Process Horizontal Scrollable Strip (Matching Deliverables & Wireframe) */
+    .cs-process-strip-wrapper {
+      position: relative;
+      width: calc(100% + (2 * var(--article-pad-x, 64px)));
+      margin-left: calc(-1 * var(--article-pad-x, 64px));
+      margin-right: calc(-1 * var(--article-pad-x, 64px));
+      overflow: visible;
+      margin-top: 0;
+    }
+
+    .cs-process-strip-track {
+      display: flex;
+      align-items: stretch;
+      gap: 24px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-top: 10px;
+      padding-bottom: 28px;
+      padding-left: var(--article-pad-x, 64px);
+      padding-right: var(--article-pad-x, 64px);
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .cs-process-strip-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cs-process-strip-track:active,
+    .cs-process-strip-track.is-dragging {
+      cursor: grabbing;
+    }
+
+    .cs-process-strip-track .cs-step-card {
+      opacity: 1 !important;
+      transform: none !important;
+      flex: 0 0 auto;
+      width: clamp(380px, 36vw, 480px) !important;
+      background: #0E1224 !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      border-radius: 20px !important;
+      padding: clamp(32px, 3.6vw, 44px) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      box-sizing: border-box !important;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35) !important;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease !important;
+      cursor: default;
+    }
+
+    .cs-process-strip-track .cs-step-card:hover {
+      transform: translateY(-5px) !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55) !important;
+    }
+
+    .cs-step-top,
+    .cs-process-strip-track .cs-step-top {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding-bottom: 0 !important;
+      border-bottom: none !important;
+      margin-bottom: 18px !important;
+      width: 100% !important;
+    }
+
+    .cs-process-strip-track .cs-step-badge {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 0.8rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.14em !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      padding: 6px 16px !important;
+      border-radius: 9999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    }
+
+    .cs-process-strip-track .cs-step-title {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(1.22rem, 1.45vw, 1.45rem) !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.02em !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+      line-height: 1.32 !important;
+      margin: 0 0 14px 0 !important;
+    }
+
+    .cs-process-strip-track .cs-step-desc {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(0.96rem, 1.08vw, 1.05rem) !important;
+      line-height: 1.65 !important;
+      color: rgba(255, 255, 255, 0.85) !important;
+      margin: 0 0 18px 0 !important;
+    }
+
+    .cs-process-strip-track .cs-step-bullets {
+      list-style: none !important;
+      padding: 18px 0 0 0 !important;
+      margin: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 14px !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .cs-process-strip-track .cs-step-bullets li {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(0.9rem, 1vw, 0.98rem) !important;
+      line-height: 1.6 !important;
+      color: rgba(255, 255, 255, 0.72) !important;
+      position: relative !important;
+      padding-left: 20px !important;
+    }
+
+    .cs-process-strip-track .cs-step-bullets li::before {
+      content: "—" !important;
+      position: absolute !important;
+      left: 0 !important;
+      color: rgba(255, 255, 255, 0.45) !important;
+      font-weight: 700 !important;
+    }
+
+    @media (max-width: 768px) {
+      .cs-process-strip-track .cs-step-card {
+        width: clamp(290px, 84vw, 360px) !important;
+        padding: 28px 22px !important;
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       COLLINS-STYLE SCROLLABLE GALLERY STRIP & MODAL POPUP (Toga Edition)
+       - Clean horizontal scroll strip displaying 4 featured deliverables
+       - End-of-scroll "Explore Full Gallery" card with miniature 3D stack
+       - Full-screen luxury popup to view all deliverables ("The Real Deal")
+       - Zero scroll fatigue: fits within viewport effortlessly
+       -------------------------------------------------------------------------- */
+    .cs-gallery-section {
+      padding: 90px 0;
+      border-top: 1px solid var(--border-toga);
+      position: relative;
+    }
+
+    
+
+    /* Horizontal Scrollable Track — Bleeds past padding on BOTH left & right */
+    .cs-strip-wrapper {
+      position: relative;
+      width: calc(100% + (2 * var(--article-pad-x, 64px)));
+      margin-left: calc(-1 * var(--article-pad-x, 64px));
+      margin-right: calc(-1 * var(--article-pad-x, 64px));
+      overflow: visible;
+    }
+
+    .cs-strip-track {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-top: 10px;
+      padding-bottom: 24px;
+      padding-left: var(--article-pad-x, 64px);
+      padding-right: var(--article-pad-x, 64px);
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .cs-strip-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cs-strip-track:active {
+      cursor: grabbing;
+    }
+
+    /* Strip Image Item (Clean Collins Aesthetic) */
+    .cs-strip-item {
+      flex: 0 0 auto;
+      height: clamp(320px, 44vh, 420px);
+      border-radius: 20px;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+
+    .cs-strip-item:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .cs-strip-img {
+      height: 100%;
+      width: auto;
+      max-width: min(640px, 80vw);
+      object-fit: cover;
+      display: block;
+      border-radius: 20px;
+      pointer-events: none;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    /* End-of-Scroll "Explore Full Gallery" Card */
+    .cs-strip-explore-card {
+      flex: 0 0 auto;
+      width: clamp(280px, 30vw, 360px);
+      height: clamp(300px, 44vh, 420px);
+      border-radius: 20px;
+      background: #0E1224;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      padding: 32px 28px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+            position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cs-strip-explore-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.30);
+      box-shadow: 0 24px 65px rgba(0, 0, 0, 0.75);
+    }
+
+    .cs-explore-badge {
+      display: none !important;
+    }
+
+    .cs-explore-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      margin: 0;
+    }
+
+    .cs-explore-card-stack {
+      position: relative;
+      width: 140px;
+      height: 100px;
+      perspective: 700px;
+      margin: 10px 0;
+    }
+
+    .cs-stack-mini {
+      position: absolute;
+      width: 95px;
+      height: 65px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      left: 22px;
+      top: 15px;
+    }
+
+    .cs-stack-mini img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cs-stack-mini:nth-child(1) {
+      transform: translate(-16px, -10px) rotate(-6deg);
+      z-index: 1;
+    }
+    .cs-stack-mini:nth-child(2) {
+      transform: translate(14px, 8px) rotate(6deg);
+      z-index: 2;
+    }
+    .cs-stack-mini:nth-child(3) {
+      transform: translate(0, 0) rotate(0deg);
+      z-index: 3;
+    }
+
+    .cs-strip-explore-card:hover .cs-stack-mini:nth-child(1) {
+      transform: translate(-28px, -16px) rotate(-12deg);
+    }
+    .cs-strip-explore-card:hover .cs-stack-mini:nth-child(2) {
+      transform: translate(26px, 14px) rotate(12deg);
+    }
+    .cs-strip-explore-card:hover .cs-stack-mini:nth-child(3) {
+      transform: translate(0, -6px) scale(1.05);
+    }
+
+    .cs-explore-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      color: #070A18;
+      font-family: var(--font-toga);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cs-strip-explore-card:hover .cs-explore-btn {
+      background: rgba(255, 255, 255, 0.88);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
+    }
+
+    /* --------------------------------------------------------------------------
+       FULL GALLERY MODAL POPUP ("THE REAL DEAL")
+       -------------------------------------------------------------------------- */
+    .cs-gallery-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(7, 10, 24, 0.98);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      z-index: 999999 !important;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: clamp(80px, 12vh, 120px) clamp(20px, 4vw, 48px) clamp(40px, 6vh, 64px);
+      box-sizing: border-box;
+    }
+
+    .cs-gallery-modal.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cs-modal-close-btn {
+      position: fixed;
+      top: clamp(24px, 4vw, 40px);
+      right: clamp(24px, 4vw, 40px);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      cursor: pointer;
+      z-index: 1000000 !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .cs-modal-close-btn:hover {
+      background: #FFFFFF;
+      color: #070A18;
+      transform: scale(1.08) rotate(90deg);
+      box-shadow: 0 10px 28px rgba(255, 255, 255, 0.30);
+    }
+
+    .cs-modal-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(24px) scale(0.98);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cs-gallery-modal.is-open .cs-modal-inner {
+      transform: translateY(0) scale(1);
+    }
+
+        /* Dirty Napkin 6-Column Stacking Layout */
+    .cs-modal-inner {
+      max-width: 1360px !important;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .cs-modal-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .cs-modal-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 40px;
+        align-items: start;
+      }
+    }
+
+    .cs-modal-item {
+      position: relative;
+      width: 100%;
+    }
+
+    .cs-modal-item.width6, .cs-modal-item.cs-modal-full {
+      grid-column: span 6;
+    }
+
+    .cs-modal-item.width4 {
+      grid-column: span 4;
+    }
+
+    .cs-modal-item.width3, .cs-modal-item.cs-modal-half {
+      grid-column: span 3;
+    }
+
+    .cs-modal-item.width2 {
+      grid-column: span 2;
+    }
+
+    .cs-modal-item.align-bottom {
+      align-self: end;
+    }
+
+    .cs-modal-item.align-top-left {
+      align-self: start;
+      justify-self: start;
+    }
+
+    .cs-modal-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      border: none !important;
+      outline: none !important;
+      background: transparent !important;
+    }
+
+    .cs-modal-item .cs-image-frame {
+      width: 100%;
+      border-radius: 20px !important;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      border: none !important;
+      outline: none !important;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .cs-modal-item:hover .cs-image-frame {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 65px rgba(0, 0, 0, 0.60);
+    }
+
+    .cs-modal-img {
+      width: 100%;
+      height: auto;
+      max-height: clamp(340px, 72vh, 680px);
+      object-fit: contain;
+      display: block;
+      border-radius: 20px !important;
+      border: none !important;
+      outline: none !important;
+    }
+
+    .cs-modal-half .cs-modal-img {
+      max-height: 480px;
+    }
+
+    @media (max-width: 860px) {
+      .cs-modal-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .cs-modal-half {
+        grid-column: span 1;
+      }
+      .cs-modal-half .cs-image-frame,
+      .cs-modal-half .cs-modal-img {
+        max-height: none;
+      }
+      .cs-strip-item {
+        height: clamp(260px, 40vh, 340px);
+      }
+      .cs-strip-explore-card {
+        height: clamp(260px, 40vh, 340px);
+        width: clamp(240px, 60vw, 290px);
+        padding: 24px 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cs-gallery-section {
+        padding: 60px 0;
+      }
+
+      .cs-modal-close-btn {
+        top: 16px;
+        right: 16px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       BRAND DESIGN SHOWCASE (Clean Card with View Brand Design Action)
+       -------------------------------------------------------------------------- */
+    .cs-brand-section {
+      padding: 90px 0;
+      border-top: 1px solid var(--border-toga);
+    }
+
+    .cs-brand-card {
+      background: #0E1224;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 28px;
+      padding: clamp(48px, 6vw, 72px) clamp(24px, 5vw, 64px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: border-color 0.3s ease;
+    }
+
+    .cs-brand-card:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    /* Figma Section & Embed Frame */
+    .cs-figma-section {
+      padding: 90px 0 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+    }
+
+    .cs-figma-frame {
+      width: 100% !important;
+      height: clamp(520px, 64vh, 720px) !important;
+      border-radius: 20px !important;
+      overflow: hidden !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      background: #0E1224 !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45) !important;
+    }
+
+    .cs-figma-iframe {
+      width: 100% !important;
+      height: 100% !important;
+      border: none !important;
+      display: block !important;
+      border-radius: 20px !important;
+    }
+
+    .cs-deliv-caption {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(0.85rem, 0.95vw, 0.92rem) !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+      color: rgba(255, 255, 255, 0.6) !important;
+      line-height: 1.5 !important;
+      text-align: center !important;
+      margin-top: 18px !important;
+    }
+
+    /* Brand Design: Clean 2-Column (No card boundary box, no title, no button) */
+    .cs-brand-section {
+      padding: clamp(80px, 10vh, 120px) 0 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+    }
+
+    .cs-brand-split-row {
+      display: grid !important;
+      grid-template-columns: auto 1fr !important;
+      gap: clamp(48px, 6.5vw, 100px) !important;
+      align-items: center !important;
+      width: 100% !important;
+      max-width: 1280px !important;
+      margin: 0 auto !important;
+      text-align: left !important;
+    }
+
+    @media (max-width: 980px) {
+      .cs-brand-split-row {
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+        text-align: center !important;
+        gap: 40px !important;
+      }
+    }
+
+    .cs-brand-split-left {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      cursor: default !important;
+    }
+
+    .cs-brand-anim-stage:hover {
+      transform: translateY(-5px) scale(1.02) !important;
+      box-shadow: 0 44px 105px rgba(0, 0, 0, 0.85), 0 0 75px rgba(25, 111, 240, 0.48) !important;
+    }
+
+    .cs-brand-split-right {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: flex-start !important;
+      max-width: 620px !important;
+    }
+
+    @media (max-width: 980px) {
+      .cs-brand-split-right {
+        align-items: center !important;
+        text-align: center !important;
+      }
+    }
+
+    .cs-brand-identity-copy {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(1.15rem, 1.45vw, 1.35rem) !important;
+      line-height: 1.65 !important;
+      color: rgba(255, 255, 255, 0.95) !important;
+      font-weight: 400 !important;
+      margin: 0 !important;
+      text-align: inherit !important;
+    }
+
+    .cs-brand-modal-split {
+      margin-bottom: 32px !important;
+    }
+
+    .cs-brand-card-header {
+      margin-bottom: clamp(32px, 4.5vw, 48px);
+      max-width: clamp(640px, 64vw, 860px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cs-brand-title {
+      font-family: var(--font-family);
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem) !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.03em !important;
+      line-height: 1.1 !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+      margin: 0 !important;
+    }
+
+    .cs-brand-subtext {
+      font-family: var(--font-family);
+      font-size: clamp(1.1rem, 1.35vw, 1.25rem);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.82);
+      margin: 20px auto 0;
+      text-align: center;
+      max-width: clamp(620px, 60vw, 800px);
+    }
+
+    .cs-brand-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      cursor: pointer;
+    }
+
+    .cs-brand-display .cs-brand-img-frame {
+      width: clamp(220px, 26vw, 320px);
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #196FF0;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.50), 0 0 35px rgba(25, 111, 240, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cs-brand-display:hover .cs-brand-img-frame {
+      transform: translateY(-6px) scale(1.03);
+      border-color: rgba(255, 255, 255, 0.32);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65), 0 0 45px rgba(25, 111, 240, 0.40);
+    }
+
+    .cs-brand-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 24px;
+    }
+
+    /* Cohesive Action Button: Exactly matching "VIEW CASE STUDY" buttons across the portfolio */
+    .cs-back-btn {
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      color: #FFFFFF !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    .cs-back-btn .cs-back-arrow,
+    .cs-back-btn .cs-back-text,
+    .cs-back-btn span {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+    }
+
+    .cs-back-btn:hover,
+    .cs-back-btn:focus-visible {
+      background: #FFFFFF !important;
+      color: #000000 !important;
+      border-color: #FFFFFF !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .cs-back-btn:hover *,
+    .cs-back-btn:focus-visible *,
+    .cs-back-btn:hover .cs-back-arrow,
+    .cs-back-btn:hover .cs-back-text,
+    .cs-back-btn:hover span {
+      color: #000000 !important;
+      -webkit-text-fill-color: #000000 !important;
+    }
+
+    .cs-back-btn:hover .cs-back-arrow {
+      transform: translateX(-4px) !important;
+    }
+
+    .card-action-btn.view-case-study {
+      height: 44px;
+      padding: 0 24px;
+      border-radius: 9999px;
+      background: transparent !important;
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      font-family: var(--font-family);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-action-btn.view-case-study:hover,
+    .cs-brand-display:hover .card-action-btn.view-case-study {
+      background: #FFFFFF;
+      color: #070A18;
+      border-color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(255, 255, 255, 0.20);
+    }
+
+
+
+    /* Body scroll lock when full-screen modals are open */
+    html.modal-locked,
+    body.modal-locked {
+      overflow: hidden !important;
+      height: 100% !important;
+      touch-action: none !important;
+    }
+
+    .cs-gallery-modal,
+    .cs-brand-modal {
+      overscroll-behavior: contain !important;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* --------------------------------------------------------------------------
+       BRAND DESIGN MODAL POPUP & ANIMATION GALLERY
+       -------------------------------------------------------------------------- */
+    .cs-brand-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(7, 10, 24, 0.98);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      z-index: 999999 !important;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: clamp(80px, 12vh, 120px) clamp(20px, 4vw, 48px) clamp(40px, 6vh, 64px);
+      box-sizing: border-box;
+    }
+
+    .cs-brand-modal.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cs-brand-modal.is-open .cs-modal-inner {
+      transform: translateY(0) scale(1);
+    }
+
+    .cs-brand-hero-item {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 10px 0 36px;
+      width: 100%;
+    }
+
+    .cs-brand-modal-header {
+      width: 100%;
+      text-align: left;
+      margin-bottom: clamp(32px, 4vw, 44px);
+    }
+
+    .cs-brand-modal-title {
+      font-family: var(--font-family);
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem) !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.03em !important;
+      line-height: 1.1 !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+      margin: 0 0 16px !important;
+      text-align: left !important;
+    }
+
+    .cs-brand-stage-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Row of Brand Color Swatches with Hex Values Labeled (Inside Modal) */
+    .cs-brand-swatches-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: clamp(14px, 2.5vw, 24px);
+      margin-top: 28px;
+      padding: 14px clamp(20px, 3vw, 32px);
+      background: rgba(14, 18, 36, 0.90);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-full, 9999px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      transition: border-color 0.3s ease;
+    }
+
+    .cs-brand-swatches-row:hover {
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .cs-swatch-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+    }
+
+    .cs-swatch-chip {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    }
+
+    .cs-swatch-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+
+    .cs-swatch-hex {
+      font-family: "Space Mono", "SF Mono", monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #FFFFFF;
+      line-height: 1.1;
+    }
+
+    .cs-swatch-name {
+      font-family: var(--font-family);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted, rgba(255, 255, 255, 0.46));
+      line-height: 1.1;
+    }
+
+    /* Body copy: Greek column metaphor (Inside Modal) */
+    .cs-brand-identity-copy {
+      font-family: var(--font-family);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 760px;
+      margin: 0 !important;
+      text-align: left !important;
+    }
+
+    @media (max-width: 768px) {
+      .cs-brand-swatches-row {
+        border-radius: 20px;
+        gap: 14px 18px;
+        padding: 14px 18px;
+      }
+    }
+
+    /* Animated Stage: Mark with grid lines slowly appearing over it in a continuous loop */
+    .cs-brand-anim-stage {
+      position: relative !important;
+      width: clamp(440px, 45vw, 620px) !important;
+      aspect-ratio: 1 / 1 !important;
+      border-radius: 36px !important;
+      overflow: hidden !important;
+      background: #196FF0 !important;
+      box-shadow: 0 36px 90px rgba(0, 0, 0, 0.75), 0 0 65px rgba(25, 111, 240, 0.38) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+      flex-shrink: 0 !important;
+    }
+
+    .cs-brand-hero-item:hover .cs-brand-anim-stage {
+      transform: translateY(-4px) scale(1.02) !important;
+      box-shadow: 0 44px 105px rgba(0, 0, 0, 0.85), 0 0 75px rgba(25, 111, 240, 0.48) !important;
+    }
+
+    .cs-brand-anim-base {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      display: block !important;
+      border-radius: 36px !important;
+    }
+
+    .cs-brand-anim-grid {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      display: block !important;
+      border-radius: 36px !important;
+      opacity: 0;
+      animation: gridRevealLoop 6s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+      will-change: opacity;
+    }
+
+    @media (max-width: 600px) {
+      .cs-brand-anim-stage {
+        width: clamp(280px, 88vw, 400px) !important;
+        border-radius: 26px !important;
+      }
+      .cs-brand-anim-base,
+      .cs-brand-anim-grid {
+        border-radius: 26px !important;
+      }
+    }
+
+    .cs-subway-frame,
+    .cs-banner-frame {
+      aspect-ratio: 4 / 3;
+      background: #0E1224;
+    }
+
+    .cs-subway-frame .cs-modal-img,
+    .cs-banner-frame .cs-modal-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @keyframes gridRevealLoop {
+      0%, 15% {
+        opacity: 0;
+      }
+      45%, 75% {
+        opacity: 1;
+      }
+      95%, 100% {
+        opacity: 0;
+      }
+    }
+    /* Responsive Viewports */
+    @media (max-width: 1024px) {
+      .cs-top-bar { padding: 20px 32px !important; }
+      .cs-article { --article-pad-x: 32px; padding: 0 var(--article-pad-x) 100px !important; }
+      .cs-overview-layout { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .cs-figma-frame, .cs-figma-iframe { height: 560px !important; }
+    }
+
+    @media (max-width: 768px) {
+      .cs-top-bar { padding: 16px 20px !important; }
+      .cs-article { --article-pad-x: 20px; padding: 0 var(--article-pad-x) 80px !important; }
+      .cs-meta-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+      .cs-process-steps-grid { grid-template-columns: 1fr !important; }
+      .cs-category-row { flex-wrap: wrap !important; justify-content: flex-start !important; gap: 10px !important; }
+      .cs-figma-frame, .cs-figma-iframe { height: 420px !important; }
+    }
+  
+    /* No outline or border around images - cohesive 20px corner radius */
+    .cs-image-frame,
+    .cs-overview-frame,
+    .cs-strip-item,
+    .cs-modal-item,
+    .cs-strip-img,
+    .cs-modal-img,
+    .cs-deliv-img,
+    .cs-overview-img {
+      border: none !important;
+      outline: none !important;
+      border-radius: 20px !important;
+    }
+  
+    
+    /* Deliverables Visual Size & Presence (Matching User Wireframe) */
+    .cs-gallery-section#deliverables {
+      padding: 0 !important;
+      border: none !important;
+      margin-top: 24px !important;
+      width: 100% !important;
+    }
+
+    .cs-strip-item {
+      flex: 0 0 auto;
+      height: clamp(440px, 60vh, 640px) !important;
+      border-radius: 20px !important;
+      overflow: hidden !important;
+      border: none !important;
+      cursor: pointer;
+      position: relative;
+      background: #0D1126;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+
+    .cs-strip-item:hover {
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .cs-strip-img {
+      height: 100% !important;
+      width: auto !important;
+      max-width: min(920px, 86vw) !important;
+      object-fit: cover !important;
+      display: block !important;
+      border-radius: 20px !important;
+    }
+
+    .cs-strip-explore-card {
+      flex: 0 0 auto;
+      width: clamp(280px, 26vw, 360px) !important;
+      height: clamp(440px, 60vh, 640px) !important;
+      border-radius: 20px !important;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(24px, 3.5vw, 36px);
+      box-sizing: border-box;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Overview Split Grid (Image 2 style with Montserrat fonts and dark colors) */
+    .cs-overview-split-grid {
+      display: grid !important;
+      grid-template-columns: 220px 1fr !important;
+      gap: clamp(48px, 6vw, 96px) !important;
+      align-items: start !important;
+      width: 100% !important;
+    }
+
+    @media (max-width: 820px) {
+      .cs-overview-split-grid {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+      }
+    }
+
+    .cs-overview-meta-col {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 32px !important;
+    }
+
+    @media (max-width: 820px) {
+      .cs-overview-meta-col {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        padding-bottom: 28px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+      }
+    }
+
+    .cs-overview-meta-item {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+    }
+
+    .cs-overview-meta-item .cs-cell-label {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 0.74rem !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.14em !important;
+      color: rgba(255, 255, 255, 0.42) !important;
+    }
+
+    .cs-overview-meta-item .cs-cell-value {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 1.05rem !important;
+      font-weight: 600 !important;
+      color: #FFFFFF !important;
+      line-height: 1.35 !important;
+    }
+
+    .cs-overview-story-col {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 24px !important;
+      max-width: 880px !important;
+      width: 100% !important;
+    }
+
+    .cs-narrative-lead,
+    .cs-overview-story-content .cs-narrative-p {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(1.15rem, 1.45vw, 1.35rem) !important;
+      line-height: 1.65 !important;
+      color: rgba(255, 255, 255, 0.95) !important;
+      font-weight: 400 !important;
+      margin: 0 !important;
+    }
+
+    .cs-cutoff-dots {
+      color: rgba(255, 255, 255, 0.45);
+      transition: opacity 0.2s ease;
+    }
+
+    .cs-overview-story-col.is-expanded .cs-cutoff-dots {
+      display: none;
+    }
+
+    .cs-overview-expandable {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, margin-top 0.4s ease;
+    }
+
+    .cs-overview-story-col.is-expanded .cs-overview-expandable {
+      max-height: 1600px;
+      opacity: 1;
+      margin-top: 24px;
+    }
+
+    .cs-read-story-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      align-self: flex-start !important;
+      padding: 12px 24px !important;
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.30) !important;
+      border-radius: 9999px !important;
+      color: #FFFFFF !important;
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 0.88rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.02em !important;
+      cursor: pointer !important;
+      margin-top: 8px !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .cs-read-story-btn:hover {
+      background: #FFFFFF !important;
+      color: #070A18 !important;
+      border-color: #FFFFFF !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.18) !important;
+    }
+
+        .cs-read-story-btn .arrow-glyph,
+    .cs-read-story-btn #storyBtnArrow,
+    .arrow-glyph {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 0.9rem !important;
+      font-weight: 700 !important;
+      line-height: 1 !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .cs-read-story-btn:hover .arrow-glyph,
+    .cs-read-story-btn:hover #storyBtnArrow,
+    .card-action-btn:hover .arrow-glyph {
+      transform: translate(3px, -3px) !important;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Custom interactive cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="case-study-print-wrapper">
+    <!-- Top Sticky Control Bar -->
+    <header class="cs-top-bar">
+      <div class="cs-top-container">
+        <a href="index.html" class="cs-back-btn" data-magnetic aria-label="Return to portfolio">
+          <span class="cs-back-arrow">←</span>
+          <span class="cs-back-text">BACK TO PORTFOLIO</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Case Study Body Content -->
+    <article class="cs-article">
+      <!-- Full-Width Hero -->
+      <section class="cs-hero-section">
+        <div class="cs-hero-container">
+          <div class="cs-hero-main">
+            <div class="cs-hero-content">
+              <div class="cs-category-row">
+                <span class="cs-pill">UX/UI Design</span>
+                <span class="cs-pill">Product Design</span>
+                <span class="cs-pill">Interaction Design</span>
+              </div>
+
+              <h1 class="cs-hero-title">TOGA</h1>
+              <p class="cs-hero-summary">An early-stage RSVP and event management concept for Greek life organizations.</p>
+            </div>
+          </div>
+
+          <!-- Deliverables Horizontal Scroll Strip (Directly underneath Title & Sub, visually larger, no title/sub) -->
+          <div class="cs-gallery-section" id="deliverables" aria-label="Deliverables Gallery">
+            <div class="cs-strip-wrapper">
+              <div class="cs-strip-track" id="galleryStripTrack">
+
+                <!-- Strip Item 1: Core App Screens Showcase -->
+                <div class="cs-strip-item" data-index="0" role="button" tabindex="0" aria-label="Open Full Gallery at Screen Showcase">
+                  <img src="toga-hero-phones.jpg?v=20261001" alt="Toga Mobile App Screens Showcase" class="cs-strip-img" loading="eager" draggable="false">
+                </div>
+
+                <!-- Strip Item 2: Collapsible Calendar Interaction -->
+                <div class="cs-strip-item" data-index="1" role="button" tabindex="0" aria-label="Open Full Gallery at Calendar Interaction">
+                  <img src="toga-calendar-collapse.png?v=20261001" alt="Collapsible calendar interaction with Dynamic Island effect" class="cs-strip-img" loading="lazy" draggable="false">
+                </div>
+
+                <!-- Strip Item 3: In-Hand App Experience -->
+                <div class="cs-strip-item" data-index="2" role="button" tabindex="0" aria-label="Open Full Gallery at In-Hand Experience">
+                  <img src="toga-hand-mockup.png?v=20261005" alt="Toga mobile app in-hand mockup" class="cs-strip-img" loading="lazy" draggable="false">
+                </div>
+
+                <!-- End of Scroll: View Full Gallery Card -->
+                <div class="cs-strip-explore-card" id="openGalleryCard" role="button" tabindex="0" aria-label="Open Full Deliverables Gallery">
+                  <div class="cs-explore-card-top">
+                    <h3 class="cs-explore-title">Explore Full Gallery</h3>
+                  </div>
+
+                  <div class="cs-explore-card-stack">
+                    <div class="cs-stack-mini">
+                      <img src="toga-hero-phones.jpg?v=20261001" alt="Preview 1">
+                    </div>
+                    <div class="cs-stack-mini">
+                      <img src="toga-calendar-collapse.png?v=20261001" alt="Preview 2">
+                    </div>
+                    <div class="cs-stack-mini">
+                      <img src="toga-hand-mockup.png?v=20261005" alt="Preview 3">
+                    </div>
+                  </div>
+
+                  <div class="cs-explore-card-bottom">
+                    <span class="cs-explore-btn">
+                      <span>VIEW FULL GALLERY</span>
+                      <span class="arrow">&rarr;</span>
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview Section: 2-Column Meta & Narrative (Image 2 style) -->
+      <section class="cs-section cs-overview-section" id="overview">
+        <div class="cs-container">
+          <div class="cs-overview-split-grid">
+            <!-- Left Column: Vertical Meta Style -->
+            <div class="cs-overview-meta-col">
+              <div class="cs-overview-meta-item">
+                <span class="cs-cell-label">Role</span>
+                <span class="cs-cell-value">Lead Designer</span>
+              </div>
+              <div class="cs-overview-meta-item">
+                <span class="cs-cell-label">Tools</span>
+                <span class="cs-cell-value">Figma</span>
+              </div>
+              <div class="cs-overview-meta-item">
+                <span class="cs-cell-label">Category</span>
+                <span class="cs-cell-value">UX/UI Concept</span>
+              </div>
+              <div class="cs-overview-meta-item">
+                <span class="cs-cell-label">Year</span>
+                <span class="cs-cell-value">2026</span>
+              </div>
+            </div>
+
+            <!-- Right Column: Narrative with Read More Cutoff -->
+            <div class="cs-overview-story-col">
+              <div class="cs-overview-story-content" id="overviewStoryContent">
+                <p class="cs-narrative-p cs-narrative-lead">
+                  Toga started with a pretty simple observation: rush week is chaotic if you don't already know someone. Events get passed around by word of mouth, flyers get torn down, and if you're new to campus and genuinely curious about Greek life, there's no real place to just see what's going on or who each chapter actually is.<span class="cs-cutoff-dots">...</span>
+                </p>
+                <div class="cs-overview-expandable" id="overviewExpandable">
+                  <p class="cs-narrative-p cs-narrative-lead">
+                    The idea was to give that experience a home. A place where chapters could show their personality beyond a flyer stapled to a bulletin board, and where someone going through rush could actually keep track of where they're supposed to be and when.
+                  </p>
+                  <p class="cs-narrative-p cs-narrative-lead">
+                    The calendar became the center of it because that's the real problem. Greek life runs on a schedule that lives in ten different places at once. Toga brings that into one view, designed to make the week feel manageable instead of overwhelming.
+                  </p>
+                  <p class="cs-narrative-p cs-narrative-lead">
+                    A close friend studying finance became an early sounding board, someone who thought about the organizational side of chapters in a way I didn't. Those conversations pushed the designs past the surface and into questions about what different people actually need to see.
+                  </p>
+                  <p class="cs-narrative-p cs-narrative-lead">
+                    From there the concept found its way into conversations with startup investors interested in campus social infrastructure. Those conversations confirmed the problem was real and worth solving. The designs are what came out of that process.
+                  </p>
+                </div>
+              </div>
+
+              <button class="cs-read-story-btn" id="toggleStoryBtn" type="button" aria-expanded="false" data-magnetic>
+                <span id="storyBtnText">Read the full story</span>
+                <span class="arrow-glyph" id="storyBtnArrow">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Figma Embed Section (Right over Brand Design) -->
+      <section class="cs-section cs-figma-section" id="figmaPrototype">
+        <div class="cs-container">
+          <div class="cs-deliverable-item cs-deliv-full">
+            <div class="cs-image-frame cs-figma-frame">
+              <iframe 
+                src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/nNsfrA0xkB7jIpYww5LYGJ/Untitled?node-id=0-1&t=8ZcdKcJsQt2LMwmi-1" 
+                title="Toga Figma File" 
+                class="cs-figma-iframe" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Design Section: No card container, no title, no button (Just Animation & Vertically Centered Text) -->
+      <section class="cs-section cs-brand-section" id="brandDesign">
+        <div class="cs-container">
+          <div class="cs-brand-split-row">
+            <div class="cs-brand-split-left">
+              <div class="cs-brand-anim-stage">
+                <img src="toga-brand-mark.png?v=20261001" alt="Toga Primary Icon Mark" class="cs-brand-anim-base">
+                <img src="toga-brand-geometry.png?v=20261001" alt="Toga Construction Geometry Grid" class="cs-brand-anim-grid">
+              </div>
+            </div>
+
+            <div class="cs-brand-split-right">
+              <p class="cs-brand-identity-copy">
+                The logomark is a Greek column that doubles as a &lsquo;T&rsquo; for Toga. A column holds things up &mdash; that felt like the right metaphor for an app built to help people navigate Greek life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section: Scrollable Horizontal Strip (Matching Wireframe) -->
+      <section class="cs-section cs-process-section" id="process">
+        <div class="cs-container">
+          <div class="cs-strip-wrapper cs-process-strip-wrapper">
+            <div class="cs-strip-track cs-process-strip-track" id="processStripTrack">
+              <!-- Step 1 -->
+              <div class="cs-step-card">
+                <div class="cs-step-top">
+                  <span class="cs-step-badge">Phase 1</span>
+                </div>
+                <h3 class="cs-step-title">Problem Definition &amp; Domain Research</h3>
+                <p class="cs-step-desc">Toga is a concept prototype, four screens designed to high fidelity to explore what this product could be. The process was treated as if it were going to ship.</p>
+                <ul class="cs-step-bullets">
+                  <li>Collaborated closely with a finance major to understand the organizational layer beneath the social one, event costs, chapter treasury workflows, and accountability structures.</li>
+                  <li>Identified the core tension: Greek life is social but event coordination is logistical, and nothing was designed to bridge both for someone trying to find their place in it.</li>
+                  <li>Focused on a single user: someone going through rush who doesn't know where to be, who each chapter is, or how to keep track of the week.</li>
+                </ul>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="cs-step-card">
+                <div class="cs-step-top">
+                  <span class="cs-step-badge">Phase 2</span>
+                </div>
+                <h3 class="cs-step-title">UI &amp; Interaction Design</h3>
+                <ul class="cs-step-bullets">
+                  <li>Mapped the full UI across three zones: Home Feed, Explore, and Events, each with a distinct job and none overlapping.</li>
+                  <li>Built low-fidelity wireframes for all primary screens with speed of use as the primary constraint.</li>
+                  <li>Designed a collapsible calendar interaction on the Events tab, a scroll list by default that expands into a full monthly view on tap, balancing screen real estate with temporal context. Showing both states side by side in Figma was how the interaction logic was resolved before touching high fidelity.</li>
+                  <li>Drew direct inspiration from Apple's Dynamic Island: the idea that a UI element can shift its shape and context fluidly based on what the user needs in the moment, without navigating away.</li>
+                </ul>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="cs-step-card">
+                <div class="cs-step-top">
+                  <span class="cs-step-badge">Phase 3</span>
+                </div>
+                <h3 class="cs-step-title">Visual Design</h3>
+                <ul class="cs-step-bullets">
+                  <li>Committed to a single strong blue and held it across every touchpoint: the bottom nav, CTAs, active states, badges, and calendar highlights, so every element reads as part of one system.</li>
+                  <li>The Explore screen, chapter cards with cover images, taglines, and member counts, was designed as the product's most distinctive surface, the screen that answers &ldquo;why is this not just a group chat.&rdquo;</li>
+                  <li>Brought four screens to high fidelity: Home Feed, Explore, Events List, and Calendar View.</li>
+                </ul>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="cs-step-card">
+                <div class="cs-step-top">
+                  <span class="cs-step-badge">Phase 4</span>
+                </div>
+                <h3 class="cs-step-title">Concept Validation</h3>
+                <ul class="cs-step-bullets">
+                  <li>Presented designs to Greek life members and chapter leadership for informal feedback</li>
+                  <li>Took the concept into early conversations with investors in the campus social infrastructure space</li>
+                  <li>Used that feedback to understand what the product would need to become — and to confirm the problem space was worth solving</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </article>
+  </div>
+
+  <!-- The Real Deal: Full-Screen Modal Popup Gallery -->
+      <div class="cs-gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Full Deliverables Gallery" aria-hidden="true">
+        <button class="cs-modal-close-btn" id="modalCloseBtn" aria-label="Close Gallery">✕</button>
+
+        <div class="cs-modal-inner">
+          <div class="cs-modal-grid">
+
+            <!-- Modal Asset 1: Core App Screens Showcase -->
+            <div class="cs-modal-item cs-modal-full" id="modalItem0">
+              <div class="cs-image-frame cs-screens-frame">
+                <img src="toga-hero-phones.jpg?v=20261001" alt="Toga Mobile App Screens Showcase" class="cs-modal-img" loading="eager">
+              </div>
+            </div>
+
+            <!-- Modal Asset 2: Dynamic Island Calendar -->
+            <div class="cs-modal-item cs-modal-half" id="modalItem1">
+              <div class="cs-image-frame cs-calendar-frame">
+                <img src="toga-calendar-collapse.png?v=20261001" alt="Collapsible calendar interaction with Dynamic Island effect" class="cs-modal-img" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Modal Asset 3: In-Hand App Experience -->
+            <div class="cs-modal-item cs-modal-half" id="modalItem2">
+              <div class="cs-image-frame cs-overview-frame">
+                <img src="toga-hand-mockup.png?v=20261005" alt="Toga mobile app in-hand mockup" class="cs-modal-img" loading="lazy">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  <!-- Brand Design Interactive Animated Modal -->
+  <div class="cs-brand-modal" id="brandModal" role="dialog" aria-modal="true" aria-label="Brand Design Showcase Gallery" aria-hidden="true">
+    <button class="cs-modal-close-btn" id="brandModalCloseBtn" aria-label="Close Brand Design">✕</button>
+
+    <div class="cs-modal-inner">
+      <div class="cs-modal-grid">
+
+        <!-- Modal Asset 1: Primary Mark Geometry Construction Animation & Brand Identity System -->
+        <div class="cs-modal-item cs-modal-full cs-brand-hero-item">
+          <!-- 2-Column Split inside modal: Animated Logo Left & Text Right (No Title) -->
+          <div class="cs-brand-split-row cs-brand-modal-split">
+            <div class="cs-brand-split-left">
+              <div class="cs-brand-anim-stage">
+                <img src="toga-brand-mark.png?v=20261001" alt="Toga Primary Icon Mark" class="cs-brand-anim-base">
+                <img src="toga-brand-geometry.png?v=20261001" alt="Toga Construction Geometry Grid" class="cs-brand-anim-grid">
+              </div>
+            </div>
+            <div class="cs-brand-split-right">
+              <p class="cs-brand-identity-copy">
+                The logomark is a Greek column that doubles as a &lsquo;T&rsquo; for Toga. A column holds things up &mdash; that felt like the right metaphor for an app built to help people navigate Greek life.
+              </p>
+            </div>
+          </div>
+
+          <!-- Row of Brand Color Swatches with Hex Values Labeled (Below Animation) -->
+          <div class="cs-brand-swatches-row" role="region" aria-label="Brand Color Palette">
+            <div class="cs-swatch-item">
+              <span class="cs-swatch-chip" style="background: #196FF0;"></span>
+              <div class="cs-swatch-meta">
+                <span class="cs-swatch-hex">#196FF0</span>
+                <span class="cs-swatch-name">Primary</span>
+              </div>
+            </div>
+            <div class="cs-swatch-item">
+              <span class="cs-swatch-chip" style="background: #5E9AF5;"></span>
+              <div class="cs-swatch-meta">
+                <span class="cs-swatch-hex">#5E9AF5</span>
+                <span class="cs-swatch-name">Sky Blue</span>
+              </div>
+            </div>
+            <div class="cs-swatch-item">
+              <span class="cs-swatch-chip" style="background: #FF6EAA;"></span>
+              <div class="cs-swatch-meta">
+                <span class="cs-swatch-hex">#FF6EAA</span>
+                <span class="cs-swatch-name">Pink</span>
+              </div>
+            </div>
+            <div class="cs-swatch-item">
+              <span class="cs-swatch-chip" style="background: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.40);"></span>
+              <div class="cs-swatch-meta">
+                <span class="cs-swatch-hex">#FFFFFF</span>
+                <span class="cs-swatch-name">White</span>
+              </div>
+            </div>
+            <div class="cs-swatch-item">
+              <span class="cs-swatch-chip" style="background: #9CA3AF;"></span>
+              <div class="cs-swatch-meta">
+                <span class="cs-swatch-hex">#9CA3AF</span>
+                <span class="cs-swatch-name">Slate</span>
+              </div>
+            </div>
+            <div class="cs-swatch-item">
+              <span class="cs-swatch-chip" style="background: #070A18; border: 1px solid rgba(255, 255, 255, 0.25);"></span>
+              <div class="cs-swatch-meta">
+                <span class="cs-swatch-hex">#070A18</span>
+                <span class="cs-swatch-name">Obsidian</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Asset 2: Subway Ad Campaign Mockup -->
+        <div class="cs-modal-item cs-modal-half">
+          <div class="cs-image-frame cs-subway-frame">
+            <img src="toga-brand-subway.jpg?v=20261001" alt="Toga Subway Advertising Mockup - Next Stop, Your Dream Chapter" class="cs-modal-img" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Modal Asset 3: Architectural Twilight Streetlamp Banner Mockup -->
+        <div class="cs-modal-item cs-modal-half">
+          <div class="cs-image-frame cs-banner-frame">
+            <img src="toga-brand-banner.jpg?v=20261001" alt="Toga Streetlamp Vertical Banner Architectural Mockup" class="cs-modal-img" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Standalone custom cursor and magnetic integration for full parity
+    (function () {
+      const cursorDot = document.getElementById('customCursor');
+      const cursorFollower = document.getElementById('cursorFollower');
+      if (!cursorDot || !cursorFollower) return;
+
+      let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+      let followerX = mouseX, followerY = mouseY;
+      let hasMoved = false;
+
+      window.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!hasMoved) {
+          hasMoved = true;
+          followerX = mouseX;
+          followerY = mouseY;
+          cursorDot.style.opacity = '1';
+          cursorFollower.style.opacity = '1';
+        }
+        cursorDot.style.transform = 'translate(' + mouseX + 'px, ' + mouseY + 'px)';
+      }, { passive: true });
+
+      function renderCursor() {
+        followerX += (mouseX - followerX) * 0.22;
+        followerY += (mouseY - followerY) * 0.22;
+        cursorFollower.style.transform = 'translate(' + followerX + 'px, ' + followerY + 'px)';
+        requestAnimationFrame(renderCursor);
+      }
+      requestAnimationFrame(renderCursor);
+
+      document.addEventListener('mouseover', function (e) {
+        if (e.target.closest('a, button, [role="button"], .cs-btn, .pill-btn, .cs-gallery-item, .cs-modal-item, .cs-swatch-item, .cs-modal-close-btn, .deck-filter-btn, .chip, [data-magnetic], input, select, textarea')) {
+          document.body.classList.add('cursor-hover');
+        } else {
+          document.body.classList.remove('cursor-hover');
+        }
+      });
+
+      document.addEventListener('mouseleave', function () {
+        cursorDot.style.opacity = '0';
+        cursorFollower.style.opacity = '0';
+      });
+
+      document.addEventListener('mouseenter', function () {
+        if (hasMoved) {
+          cursorDot.style.opacity = '1';
+          cursorFollower.style.opacity = '1';
+        }
+      });
+
+      document.querySelectorAll('[data-magnetic], .card-action-btn, .cs-back-btn, .cs-back-btn-large, .email-copy-pill, .back-to-top').forEach(function (el) {
+        el.addEventListener('mousemove', function (e) {
+          const rect = el.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          el.style.transform = 'translate(' + (x * 0.22) + 'px, ' + (y * 0.22) + 'px)';
+        });
+        el.addEventListener('mouseleave', function () {
+          el.style.transform = 'translate(0px, 0px)';
+          el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+          setTimeout(function () { el.style.transition = ''; }, 400);
+        });
+      });
+    })();
+  </script>
+  <script>
+    // --------------------------------------------------------------------------
+    // OVERVIEW READ MORE TOGGLE
+    // --------------------------------------------------------------------------
+    (function() {
+      const toggleBtn = document.getElementById("toggleStoryBtn");
+      const btnText = document.getElementById("storyBtnText");
+      const btnArrow = document.getElementById("storyBtnArrow");
+      const storyCol = document.querySelector(".cs-overview-story-col");
+
+      if (toggleBtn && storyCol) {
+        toggleBtn.addEventListener("click", () => {
+          const isExpanded = storyCol.classList.toggle("is-expanded");
+          toggleBtn.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+          if (btnText) {
+            btnText.textContent = isExpanded ? "Show less" : "Read the full story";
+          }
+          if (btnArrow) {
+            btnArrow.textContent = isExpanded ? "↑" : "↗";
+          }
+        });
+      }
+    })();
+
+    // --------------------------------------------------------------------------
+    // DESIGN PROCESS SCROLLABLE STRIP INTERACTION
+    // --------------------------------------------------------------------------
+    (function() {
+      const processTrack = document.getElementById("processStripTrack");
+      if (processTrack) {
+                processTrack.scrollLeft = 0;
+
+        processTrack.addEventListener("wheel", (e) => {
+          if (e.deltaY !== 0 && Math.abs(e.deltaY) >= Math.abs(e.deltaX)) {
+            e.preventDefault();
+            let dy = e.deltaY;
+            if (e.deltaMode === 1) dy *= 20;
+            else if (e.deltaMode === 2) dy *= window.innerHeight;
+            window.scrollBy(0, dy);
+          }
+        }, { passive: false });
+
+        let isDown = false;
+        let startX, scrollLeft;
+
+        processTrack.addEventListener("mousedown", (e) => {
+          isDown = true;
+          processTrack.classList.add("is-dragging");
+          startX = e.pageX - processTrack.offsetLeft;
+          scrollLeft = processTrack.scrollLeft;
+        });
+
+        window.addEventListener("mouseup", () => {
+          isDown = false;
+          if (processTrack) processTrack.classList.remove("is-dragging");
+        });
+
+        window.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          const x = e.pageX - processTrack.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          processTrack.scrollLeft = scrollLeft - walk;
+        });
+      }
+    })();
+
+    // --------------------------------------------------------------------------
+    // COLLINS-STYLE GALLERY STRIP & MODAL INTERACTION (Toga)
+    // --------------------------------------------------------------------------
+    (function() {
+      const stripTrack = document.getElementById("galleryStripTrack");
+      const galleryModal = document.getElementById("galleryModal");
+      const modalCloseBtn = document.getElementById("modalCloseBtn");
+      const openGalleryCard = document.getElementById("openGalleryCard");
+      const stripItems = document.querySelectorAll(".cs-strip-item");
+
+      if (stripTrack) {
+                stripTrack.scrollLeft = 0;
+
+        stripTrack.addEventListener("wheel", (e) => {
+          if (e.deltaY !== 0 && Math.abs(e.deltaY) >= Math.abs(e.deltaX)) {
+            e.preventDefault();
+            let dy = e.deltaY;
+            if (e.deltaMode === 1) dy *= 20;
+            else if (e.deltaMode === 2) dy *= window.innerHeight;
+            window.scrollBy(0, dy);
+          }
+        }, { passive: false });
+
+        let isDown = false;
+        let startX, scrollLeft, moved = false;
+
+        stripTrack.addEventListener("mousedown", (e) => {
+          isDown = true;
+          moved = false;
+          startX = e.pageX - stripTrack.offsetLeft;
+          scrollLeft = stripTrack.scrollLeft;
+        });
+
+        window.addEventListener("mouseup", () => {
+          isDown = false;
+        });
+
+        window.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          const x = e.pageX - stripTrack.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          if (Math.abs(walk) > 6) moved = true;
+          stripTrack.scrollLeft = scrollLeft - walk;
+        });
+
+        stripItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            if (!moved) {
+              const idx = item.getAttribute("data-index");
+              openModal(idx);
+            }
+          });
+        });
+      }
+
+      
+      function lockBodyScroll() {
+        document.documentElement.classList.add("modal-locked");
+        document.body.classList.add("modal-locked");
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+      }
+
+      function unlockBodyScroll() {
+        document.documentElement.classList.remove("modal-locked");
+        document.body.classList.remove("modal-locked");
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+      }
+
+      function openModal(targetIdx = null) {
+        const modal = document.getElementById("galleryModal");
+        if (!modal) return;
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        lockBodyScroll();
+
+        if (targetIdx && targetIdx !== "0" && targetIdx !== 0) {
+          const targetEl = document.getElementById("modalItem" + targetIdx);
+          if (targetEl) {
+            setTimeout(() => {
+              targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, 80);
+          }
+        } else {
+          modal.scrollTop = 0;
+        }
+      }
+
+      function closeModal() {
+        if (!galleryModal) return;
+        galleryModal.classList.remove("is-open");
+        galleryModal.setAttribute("aria-hidden", "true");
+        unlockBodyScroll();
+      }
+
+      if (openGalleryCard) {
+        openGalleryCard.addEventListener("click", () => openModal(null));
+      }
+
+      if (modalCloseBtn) {
+        modalCloseBtn.addEventListener("click", closeModal);
+      }
+
+      if (galleryModal) {
+        galleryModal.addEventListener("click", (e) => {
+          if (e.target === galleryModal) closeModal();
+        });
+      }
+
+      // Brand Design Modal Interaction
+      const brandModal = document.getElementById("brandModal");
+      const brandModalCloseBtn = document.getElementById("brandModalCloseBtn");
+      const openBrandModal = document.getElementById("openBrandModal");
+      const viewBrandBtn = document.getElementById("viewBrandBtn");
+
+      function openBrandPopup() {
+        if (!brandModal) return;
+        brandModal.classList.add("is-open");
+        brandModal.setAttribute("aria-hidden", "false");
+        lockBodyScroll();
+      }
+
+      function closeBrandPopup() {
+        if (!brandModal) return;
+        brandModal.classList.remove("is-open");
+        brandModal.setAttribute("aria-hidden", "true");
+        unlockBodyScroll();
+      }
+
+      if (openBrandModal) {
+        openBrandModal.addEventListener("click", openBrandPopup);
+      }
+      if (viewBrandBtn) {
+        viewBrandBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openBrandPopup();
+        });
+      }
+      if (brandModalCloseBtn) {
+        brandModalCloseBtn.addEventListener("click", closeBrandPopup);
+      }
+      if (brandModal) {
+        brandModal.addEventListener("click", (e) => {
+          if (e.target === brandModal) closeBrandPopup();
+        });
+      }
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          if (galleryModal && galleryModal.classList.contains("is-open")) {
+            closeModal();
+          }
+          if (brandModal && brandModal.classList.contains("is-open")) {
+            closeBrandPopup();
+          }
+        }
+      });
+    })();
+  </script>
+
+    
+      <!-- Seamless Return to Portfolio Script -->
+  <script>
+    (function() {
+      function returnToPortfolio(e) {
+        if (e) e.preventDefault();
+        try {
+          sessionStorage.setItem('portfolio_is_returning', 'true');
+        } catch (err) {}
+        var hasHistory = window.history.length > 1;
+        var hasReferrer = document.referrer && (document.referrer.indexOf('index.html') !== -1 || (window.location.host && document.referrer.indexOf(window.location.host) !== -1));
+
+        if (hasReferrer || hasHistory) {
+          window.history.back();
+          return;
+        }
+        window.location.href = 'index.html';
+      }
+
+      function bindBackButtons() {
+        document.querySelectorAll('.cs-back-btn, a[href*="index.html"]').forEach(function(btn) {
+          btn.addEventListener('click', returnToPortfolio);
+        });
+      }
+
+      window.addEventListener('pagehide', function() {
+        try {
+          sessionStorage.setItem('portfolio_is_returning', 'true');
+        } catch (err) {}
+      });
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bindBackButtons);
+      } else {
+        bindBackButtons();
+      }
+    })();
+  </script>
+</body>
+</html>

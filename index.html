@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logan O'Neill — Graphic Design Portfolio</title>
+  <meta name="description" content="Graphic Design portfolio of Logan O'Neill, student at Drexel University specializing in visual storytelling, branding, and illustration.">
+
+  <!-- Favicon / Web Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook / LinkedIn / iMessage -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Logan O'Neill — Graphic Design Portfolio">
+  <meta property="og:description" content="Graphic Design portfolio of Logan O'Neill, specializing in motorsport livery architecture, visual storytelling, and brand identity.">
+  <meta property="og:image" content="og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Logan O'Neill — Graphic Design Portfolio">
+  <meta name="twitter:description" content="Graphic Design portfolio of Logan O'Neill, specializing in motorsport livery architecture, visual storytelling, and brand identity.">
+  <meta name="twitter:image" content="og-image.jpg">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Montserrat Font Family (400, 500, 700, 800, 900) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=20261022_contact_links">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style id="carStackInlineStyles">
+    /* Car Wrap Dedicated Stacked Stage */
+    .deck-card-right .car-cards-stage {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+    }
+
+    /* Larger Stacked Cards */
+    .car-card-layer {
+      position: absolute;
+      width: clamp(330px, 37vw, 490px);
+      aspect-ratio: 16 / 10;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.85), 0 2px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.4s ease;
+      will-change: transform, box-shadow;
+      text-decoration: none;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    /* Back Card: Mazda Track Spec */
+    .car-layer-back {
+      z-index: 1;
+      transform: translate(-46px, -24px) rotate(-6.5deg);
+      background: #0B0E18;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .car-layer-back img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.95) contrast(1.05);
+      transition: filter 0.4s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Front Card: Porsche Studio Spec */
+    .car-layer-front {
+      z-index: 2;
+      transform: translate(32px, 22px) rotate(3.5deg);
+      background: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 34px 70px rgba(0, 0, 0, 0.92), 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .porsche-card-stage {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 12px;
+      box-sizing: border-box;
+      background: #FFFFFF;
+    }
+
+    .porsche-card-stage img {
+      width: 100%;
+      height: auto;
+      max-height: 94%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Hover Fan-out */
+    .deck-card:hover .car-layer-back {
+      transform: translate(-72px, -36px) rotate(-9.5deg) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 42px 85px rgba(0, 0, 0, 0.96);
+    }
+    .deck-card:hover .car-layer-back img {
+      filter: brightness(1.02) contrast(1.08);
+      transform: scale(1.03);
+    }
+
+    .deck-card:hover .car-layer-front {
+      transform: translate(52px, 32px) rotate(4deg) scale(1.03);
+      border-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 46px 95px rgba(0, 0, 0, 0.98);
+    }
+    .deck-card:hover .car-layer-front img {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 1024px) {
+      .deck-card-right .car-cards-stage {
+        height: 300px;
+      }
+      .car-card-layer {
+        width: clamp(260px, 68vw, 380px);
+      }
+      .car-layer-back {
+        transform: translate(-22px, -14px) rotate(-4deg);
+      }
+      .car-layer-front {
+        transform: translate(20px, 14px) rotate(2.5deg);
+      }
+    }
+      .cs-back-btn {
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      color: #FFFFFF !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    .cs-back-btn .cs-back-arrow,
+    .cs-back-btn .cs-back-text,
+    .cs-back-btn span {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+    }
+
+    .cs-back-btn:hover,
+    .cs-back-btn:focus-visible {
+      background: #FFFFFF !important;
+      color: #000000 !important;
+      border-color: #FFFFFF !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .cs-back-btn:hover *,
+    .cs-back-btn:focus-visible *,
+    .cs-back-btn:hover .cs-back-arrow,
+    .cs-back-btn:hover .cs-back-text,
+    .cs-back-btn:hover span {
+      color: #000000 !important;
+      -webkit-text-fill-color: #000000 !important;
+    }
+
+    .cs-back-btn:hover .cs-back-arrow {
+      transform: translateX(-4px) !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom interactive cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Header / Navigation (Fixed sticky on viewport) -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="#hero" class="brand-title" data-magnetic>DESIGN PORTFOLIO</a>
+
+      <nav class="site-nav">
+        <a href="#about" class="nav-link nav-link-about" data-magnetic>ABOUT</a>
+        <a href="#projects" class="nav-link nav-link-projects" data-magnetic>PROJECTS</a>
+        <a href="#contact" class="nav-link nav-link-contact" data-magnetic>CONTACT</a>
+      </nav>
+
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <span class="mobile-nav-subtitle">NAVIGATION</span>
+      <a href="#about" class="mobile-nav-link">ABOUT</a>
+      <a href="#projects" class="mobile-nav-link">PROJECTS</a>
+      <a href="#contact" class="mobile-nav-link">CONTACT</a>
+      <div class="mobile-nav-footer">
+        <span>PHILADELPHIA &bull; STAMFORD</span>
+        <span>LOGAN O'NEILL &copy; 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Root Surface (Pushes back during page turn swipe) -->
+  <div class="portfolio-root" id="portfolioRoot">
+  <main>
+    <!-- HERO SECTION (Ultra-minimal: eyebrow, bottom bar, and line removed) -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <div class="hero-title-wrap">
+          <h1 class="hero-name" id="heroTitle">
+            <span class="title-line title-logan">LOGAN</span>
+            <span class="title-line title-oneill">O'NEILL</span>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- "ABOUT ME" SECTION (Positioned before projects; exact match to user's reference) -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <!-- Giant Bold Headline in Montserrat -->
+        <h2 class="about-main-title">ABOUT ME</h2>
+
+        <!-- Exact Bio Copy provided by user -->
+        <p class="about-bio-text">
+          My name is Logan O'Neill. I am currently a Graphic Design student at Drexel University, graduating in 2028, with a strong foundation in visual storytelling, branding, and illustration. I bring ideas to life through bold design choices and a deep familiarity with ever-evolving apps like Figma and the Adobe Creative Suite, including Photoshop and Illustrator.
+        </p>
+
+        <!-- Two Reference Cards Side-by-Side -->
+        <div class="about-credentials-row">
+          <!-- Left Card: Software Badges [Ps] [Id] [Figma] [Ai] -->
+          <div class="credential-card software-card">
+            <div class="software-badge-list">
+              <div class="app-badge badge-ps" title="Adobe Photoshop">
+                <span class="badge-text">Ps</span>
+              </div>
+              <div class="app-badge badge-id" title="Adobe InDesign">
+                <span class="badge-text">Id</span>
+              </div>
+              <div class="app-badge badge-figma" title="Figma">
+                <svg class="figma-icon" width="20" height="30" viewBox="0 0 38 57" fill="none">
+                  <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#000000"/>
+                  <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#000000"/>
+                  <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#000000"/>
+                  <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#000000"/>
+                  <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#000000"/>
+                </svg>
+              </div>
+              <div class="app-badge badge-ai" title="Adobe Illustrator">
+                <span class="badge-text">Ai</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Card: Greenwich Country Day Diploma -->
+          <div class="credential-card school-card">
+            <div class="ribbon-icon-wrap">
+              <svg width="28" height="36" viewBox="0 0 28 36" fill="none">
+                <circle cx="14" cy="12" r="10" stroke="#FFFFFF" stroke-width="2"/>
+                <circle cx="14" cy="12" r="6" stroke="rgba(255,255,255,0.46)" stroke-width="1.5"/>
+                <path d="M9 20L7 34L14 30L21 34L19 20" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="school-info">
+              <span class="school-name">Greenwich Country Day</span>
+              <span class="diploma-title">Visual Arts Diploma</span>
+              <span class="diploma-year">2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACKING PROJECT CARDS (Header renamed to PROJECTS, cards with description & upload zone) -->
+    <section class="projects-stack-section" id="projects">
+      <div class="stack-pinned-wrapper">
+        <div class="stack-header-bar">
+          <div class="stack-header-left">
+            <h2 class="stack-title">PROJECTS</h2>
+          </div>
+        </div>
+
+        <!-- The stacking cards container -->
+        <div class="cards-deck-container" id="cardsDeck">
+          <!-- Card 1: Toga -->
+          <article class="deck-card deck-card-1" id="cardToga" data-project="toga" style="--card-index: 1; z-index: 1;">
+            <div class="deck-card-surface">
+              <div class="deck-card-left">
+                <div class="deck-card-graphic">
+                  <h3 class="deck-card-display">TOGA</h3>
+                  <p class="deck-card-description">
+                    An early-stage RSVP and event management concept for Greek life organizations.
+                  </p>
+                </div>
+
+                <div class="deck-card-action-bar">
+                  <a href="case-study-toga.html" class="card-action-btn view-case-study" data-project="toga" data-magnetic>
+                    <span>VIEW CASE STUDY</span>
+                    <span class="arrow-glyph">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: Dedicated Image Slot -->
+              <div class="deck-card-right">
+                <div class="project-image-slot">
+                  <img src="toga-hero-phones.jpg?v=20260930_6k_master" alt="Toga Greek Life App Showcase" class="project-slot-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Race Car Liverys -->
+          <article class="deck-card deck-card-2" id="cardCarWrap" data-project="car-wrap" style="--card-index: 2; z-index: 2;">
+            <div class="deck-card-surface">
+              <div class="deck-card-left">
+                <div class="deck-card-graphic">
+                  <h3 class="deck-card-display">RACE CAR LIVERYS</h3>
+                  <p class="deck-card-description">
+                    A multi-vehicle motorsport wrap identity and interactive 3D visualization suite for competition track cars.
+                  </p>
+                </div>
+
+                <div class="deck-card-action-bar">
+                  <a href="case-study-car-wrap.html" class="card-action-btn view-case-study" data-project="car-wrap" data-magnetic>
+                    <span>VIEW PROJECT</span>
+                    <span class="arrow-glyph">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: Dedicated Two-Card Stacked Showcase (Porsche & Mazda) -->
+              <div class="deck-card-right">
+                <div class="car-cards-stage">
+                  <!-- Back Card: Mazda MX-5 -->
+                  <a href="case-study-car-wrap.html" class="car-card-layer car-layer-back" aria-label="Mazda MX-5 Miata Livery">
+                    <img src="car-preview-mazda.jpg?v=20261019_clean" alt="Chorizo 2.0 Mazda MX-5 Track Livery" loading="lazy">
+                  </a>
+
+                  <!-- Front Card: Porsche 718 GT4 -->
+                  <a href="case-study-car-wrap.html" class="car-card-layer car-layer-front" aria-label="Porsche 718 Cayman GT4 Livery">
+                    <div class="porsche-card-stage">
+                      <img src="car-preview-porsche.png?v=20261020_seamless" alt="Porsche 718 Cayman GT4 Livery" loading="lazy">
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Air Pollution Editorial Publication -->
+          <article class="deck-card deck-card-3" id="cardAirPollution" data-project="air-pollution" style="--card-index: 3; z-index: 3;">
+            <div class="deck-card-surface">
+              <div class="deck-card-left">
+                <div class="deck-card-graphic">
+                  <h3 class="deck-card-display">POLLUTION BOOKLET</h3>
+                  <p class="deck-card-description">
+                    A typographic exploration using layout and contrast to communicate the weight of atmospheric degradation, letting type carry the message.
+                  </p>
+                </div>
+
+                <div class="deck-card-action-bar">
+                  <a href="case-study-air-pollution.html" class="card-action-btn view-case-study" data-project="air-pollution" data-magnetic>
+                    <span>VIEW PROJECT</span>
+                    <span class="arrow-glyph">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: Dedicated Image Slot with Editorial Depth -->
+              <div class="deck-card-right">
+                <div class="project-image-slot">
+                  <img src="air-pollution-assets/air-pollution-covers-mockup.jpg?v=20261019_retina" alt="Air Pollution Editorial Publication Monograph Mockup" class="project-slot-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Garbage Gala Event Identity -->
+          <article class="deck-card deck-card-4" id="cardGarbageGala" data-project="garbage-gala" style="--card-index: 4; z-index: 4;">
+            <div class="deck-card-surface">
+              <div class="deck-card-left">
+                <div class="deck-card-graphic">
+                  <h3 class="deck-card-display">GARBAGE GALA</h3>
+                  <p class="deck-card-description">
+                    An energetic brand identity, promotional campaign, and event collateral for the 2026 Garbage Gala at the Academy of Natural Sciences, created in collaboration with Westphal and the entirety of the fashion program.
+                  </p>
+                </div>
+
+                <div class="deck-card-action-bar">
+                  <a href="case-study-garbage-gala.html" class="card-action-btn view-case-study" data-project="garbage-gala" data-magnetic>
+                    <span>VIEW CASE STUDY</span>
+                    <span class="arrow-glyph">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: Dedicated Image Slot -->
+              <div class="deck-card-right">
+                <div class="project-image-slot">
+                  <img src="garbage-gala-assets/gala-card-thumb.jpg" alt="Garbage Gala Event Identity" class="project-slot-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Card 5: Undrdawg Athletics Identity & Brand Direction -->
+          <article class="deck-card deck-card-5" id="cardUndrdawg" data-project="undrdawg" style="--card-index: 5; z-index: 5;">
+            <div class="deck-card-surface">
+              <div class="deck-card-left">
+                <div class="deck-card-graphic">
+                  <h3 class="deck-card-display">UNDRDAWG ATHLETICS</h3>
+                  <p class="deck-card-description">
+                    Brand identity, dynamic logo system, and creative direction as lead designer, shaping marketing decisions and collaborations with athletes.
+                  </p>
+                </div>
+
+                <div class="deck-card-action-bar">
+                  <a href="case-study-undrdawg.html" class="card-action-btn view-case-study" data-project="undrdawg" data-magnetic>
+                    <span>VIEW PROJECT</span>
+                    <span class="arrow-glyph">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: Dedicated Image Slot -->
+              <div class="deck-card-right">
+                <div class="project-image-slot">
+                  <img src="undrdawg-assets/undrdawg-logo-full-black.jpg?v=20261021c" alt="Undrdawg Athletics Full Official Logo" class="project-slot-img" loading="eager">
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2 class="contact-title">CONTACT</h2>
+        </div>
+
+        <div class="contact-card-box">
+          <div class="contact-col contact-info-col">
+            <div class="contact-links-stack">
+              <a href="mailto:hunterlogan30@gmail.com" class="contact-display-link" data-magnetic aria-label="Send direct email to hunterlogan30@gmail.com">
+                <span class="contact-link-title">EMAIL</span>
+                <span class="contact-link-meta">hunterlogan30@gmail.com</span>
+              </a>
+              <a href="https://www.instagram.com/abstraktdesign" target="_blank" rel="noopener" class="contact-display-link" data-magnetic aria-label="Visit Instagram @abstraktdesign">
+                <span class="contact-link-title">INSTAGRAM</span>
+                <span class="contact-link-meta">@abstraktdesign</span>
+              </a>
+              <a href="https://www.linkedin.com/in/loganoneill10" target="_blank" rel="noopener" class="contact-display-link" data-magnetic aria-label="Visit LinkedIn profile">
+                <span class="contact-link-title">LINKEDIN</span>
+                <span class="contact-link-meta">linkedin.com/in/loganoneill10</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-col contact-location-col">
+            <div class="status-block">
+              <span class="location-name">PHILADELPHIA &bull; STAMFORD</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+  </main>
+  </div><!-- /#portfolioRoot -->
+
+  <!-- CASE STUDY FULL-PAGE SWIPE CONTAINER -->
+  <aside class="case-study-page" id="caseStudyPage" aria-hidden="true" role="region" aria-label="Project Case Study">
+    <!-- Top Sticky Control Bar -->
+    <header class="cs-top-bar">
+      <div class="cs-top-container">
+        <button class="cs-back-btn" id="csBackBtnTop" data-magnetic aria-label="Return to portfolio">
+          <span class="cs-back-arrow">←</span>
+          <span class="cs-back-text">BACK TO PORTFOLIO</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Case Study Body Content -->
+    <article class="cs-article" id="csArticle">
+      <!-- Full-Width Hero -->
+      <section class="cs-hero-section" id="csHeroSection">
+        <div class="cs-hero-container">
+          <div class="cs-hero-main">
+            <div class="cs-hero-content">
+              <div class="cs-category-row cs-anim-hero-item" id="csCategoryRow">
+                <span class="cs-pill">UX/UI DESIGN</span>
+                <span class="cs-pill">PRODUCT DESIGN</span>
+                <span class="cs-pill">INTERACTION DESIGN</span>
+              </div>
+
+              <h1 class="cs-hero-title cs-anim-hero-item" id="csHeroTitle">TOGA</h1>
+              <p class="cs-hero-summary cs-anim-hero-item" id="csHeroSummary">An early-stage RSVP and event management concept for Greek life organizations.</p>
+            </div>
+          </div>
+
+          <div class="cs-meta-grid cs-anim-hero-item" id="csMetaGrid">
+            <div class="cs-meta-cell">
+              <span class="cs-cell-label">ROLE</span>
+              <span class="cs-cell-value">Lead Designer</span>
+            </div>
+            <div class="cs-meta-cell">
+              <span class="cs-cell-label">TOOLS</span>
+              <span class="cs-cell-value">Figma</span>
+            </div>
+            <div class="cs-meta-cell">
+              <span class="cs-cell-label">CATEGORY</span>
+              <span class="cs-cell-value">UX/UI Concept</span>
+            </div>
+            <div class="cs-meta-cell">
+              <span class="cs-cell-label">YEAR</span>
+              <span class="cs-cell-value">2026</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview Section -->
+      <section class="cs-section cs-overview-section cs-reveal-section" id="csOverviewSection">
+        <div class="cs-container">
+          <div class="cs-section-header">
+            <h2 class="cs-section-heading" id="csOverviewHeading">PROJECT OVERVIEW</h2>
+          </div>
+
+          <div class="cs-overview-story" id="csOverviewGrid">
+            <p class="cs-narrative-p">
+              Toga started with a pretty simple observation: rush week is chaotic if you don't already know someone. Events get passed around by word of mouth, flyers get torn down, and if you're new to campus and genuinely curious about Greek life, there's no real place to just see what's going on or who each chapter actually is.
+            </p>
+            <p class="cs-narrative-p">
+              The idea was to give that experience a home. A place where chapters could show their personality beyond a flyer stapled to a bulletin board, and where someone going through rush could actually keep track of where they're supposed to be and when.
+            </p>
+            <p class="cs-narrative-p">
+              The calendar became the center of it because that's the real problem. Greek life runs on a schedule that lives in ten different places at once. Toga brings that into one view, designed to make the week feel manageable instead of overwhelming.
+            </p>
+            <p class="cs-narrative-p">
+              A close friend studying finance became an early sounding board, someone who thought about the organizational side of chapters in a way I didn't. Those conversations pushed the designs past the surface and into questions about what different people actually need to see.
+            </p>
+            <p class="cs-narrative-p">
+              From there the concept found its way into conversations with startup investors interested in campus social infrastructure. Those conversations confirmed the problem was real and worth solving. The designs are what came out of that process.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section: Broken into Sequential Steps -->
+      <section class="cs-section cs-process-section cs-reveal-section" id="csProcessSection">
+        <div class="cs-container">
+          <div class="cs-section-header">
+            <h2 class="cs-section-heading" id="csProcessHeading">DESIGN PROCESS</h2>
+          </div>
+
+          <div class="cs-process-steps-grid" id="csProcessSteps">
+            <!-- Dynamically populated phase cards -->
+          </div>
+
+          <!-- Style Guide Container (Dynamically rendered if project has style guide) -->
+          <div id="csStyleGuideContainer"></div>
+        </div>
+      </section>
+
+      <!-- Final Deliverables Section with Image Placeholders -->
+      <section class="cs-section cs-deliverables-section cs-reveal-section" id="csDeliverablesSection">
+        <div class="cs-container">
+          <div class="cs-section-header">
+            <h2 class="cs-section-heading" id="csDeliverablesHeading">FINAL DELIVERABLES</h2>
+          </div>
+
+          <div class="cs-deliverables-grid" id="csDeliverablesGrid">
+            <!-- Dynamically populated deliverable image cards -->
+          </div>
+        </div>
+      </section>
+    </article>
+  </aside>
+
+  <!-- Toast notification -->
+  <div class="toast-notification" id="toastNotification">
+    Email copied to clipboard!
+  </div>
+
+  <script src="script.js?v=20261022_scroll_restore_v3"></script>
+
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logan O'Neill — Nocturne Case Study</title>
+  <!-- Favicon / Web Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261022_final">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: #070A18 !important;
+      color: #FFFFFF !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      min-height: 100% !important;
+      overflow-x: clip !important;
+      font-family: 'Montserrat', sans-serif !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .case-study-print-wrapper {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      background: #070A18;
+      position: relative;
+    }
+
+    /* Fixed/Sticky Top Control Bar */
+    .cs-top-bar {
+      position: sticky !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      z-index: 100 !important;
+      background: rgba(7, 10, 24, 0.88) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+      padding: 22px 64px !important;
+      box-sizing: border-box !important;
+    }
+
+    .cs-top-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+    }
+
+    .cs-article {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 64px 120px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Hero Section - True Full Width */
+    .cs-hero-section {
+      padding: 70px 0 90px !important;
+      width: 100% !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+    }
+
+    .cs-hero-container,
+    .cs-hero-main {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: block !important;
+    }
+
+    .cs-hero-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: block !important;
+      grid-template-columns: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .cs-category-row {
+      width: auto !important;
+      max-width: 100% !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      margin-bottom: 28px !important;
+      gap: 12px !important;
+      box-sizing: border-box !important;
+    }
+
+    .cs-pill {
+      font-size: clamp(0.62rem, 0.72vw, 0.72rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.14em !important;
+      text-transform: uppercase !important;
+      color: rgba(255, 255, 255, 0.90) !important;
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      padding: 7px 18px !important;
+      border-radius: 9999px !important;
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    }
+
+    .cs-hero-title {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(4.5rem, 15vw, 15rem) !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.04em !important;
+      line-height: 0.88 !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+      margin-bottom: 32px !important;
+      width: 100% !important;
+    }
+
+    .cs-hero-summary {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(1rem, 1.4vw, 1.25rem) !important;
+      font-weight: 400 !important;
+      line-height: 1.6 !important;
+      color: rgba(255, 255, 255, 0.70) !important;
+      width: 100% !important;
+      max-width: none !important;
+      margin-bottom: 48px !important;
+    }
+
+    .cs-meta-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 32px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-top: 36px !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.10) !important;
+    }
+
+    /* Common Section & Containers */
+    .cs-section {
+      padding: 100px 0 !important;
+      width: 100% !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+    }
+
+    .cs-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .cs-section-header {
+      width: 100% !important;
+      margin-bottom: 32px !important;
+    }
+
+    .cs-overview-story {
+      margin-top: 0 !important;
+      gap: 22px !important;
+    }
+
+    .cs-section-heading {
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem) !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.03em !important;
+      text-transform: uppercase !important;
+      color: #FFFFFF !important;
+    }
+
+    /* Process Steps Grid */
+    .cs-process-steps-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 32px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .cs-step-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Deliverables Grid */
+    .cs-deliverables-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 48px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .cs-deliv-full {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .cs-image-frame {
+      width: 100% !important;
+      max-width: 100% !important;
+      border-radius: var(--radius-lg, 20px) !important;
+      overflow: hidden !important;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .cs-deliv-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      object-fit: contain !important;
+      display: block !important;
+      image-rendering: auto !important;
+    }
+
+    /* Responsive Viewports */
+    @media (max-width: 1024px) {
+      .cs-top-bar { padding: 20px 32px !important; }
+      .cs-article { padding: 0 32px 100px !important; }
+    }
+
+    @media (max-width: 768px) {
+      .cs-top-bar { padding: 16px 20px !important; }
+      .cs-article { padding: 0 20px 80px !important; }
+      .cs-meta-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+      .cs-process-steps-grid { grid-template-columns: 1fr !important; }
+      .cs-category-row { flex-wrap: wrap !important; justify-content: flex-start !important; gap: 10px !important; }
+    }
+    .cs-back-btn {
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      color: #FFFFFF !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    .cs-back-btn .cs-back-arrow,
+    .cs-back-btn .cs-back-text,
+    .cs-back-btn span {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+    }
+
+    .cs-back-btn:hover,
+    .cs-back-btn:focus-visible {
+      background: #FFFFFF !important;
+      color: #000000 !important;
+      border-color: #FFFFFF !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .cs-back-btn:hover *,
+    .cs-back-btn:focus-visible *,
+    .cs-back-btn:hover .cs-back-arrow,
+    .cs-back-btn:hover .cs-back-text,
+    .cs-back-btn:hover span {
+      color: #000000 !important;
+      -webkit-text-fill-color: #000000 !important;
+    }
+
+    .cs-back-btn:hover .cs-back-arrow {
+      transform: translateX(-4px) !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom interactive cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="case-study-print-wrapper">
+    <!-- Top Sticky Control Bar -->
+    <header class="cs-top-bar">
+      <div class="cs-top-container">
+        <a href="index.html" class="cs-back-btn" data-magnetic aria-label="Return to portfolio">
+          <span class="cs-back-arrow">←</span>
+          <span class="cs-back-text">BACK TO PORTFOLIO</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Case Study Body Content -->
+    <article class="cs-article">
+      <!-- Full-Width Hero -->
+      <section class="cs-hero-section">
+        <div class="cs-hero-container">
+          <div class="cs-hero-main">
+            <div class="cs-hero-content">
+              <div class="cs-category-row">
+                <span class="cs-pill">BRAND IDENTITY</span>
+                <span class="cs-pill">PACKAGING ARCHITECTURE</span>
+                <span class="cs-pill">ART DIRECTION</span>
+              </div>
+
+              <h1 class="cs-hero-title">NOCTURNE</h1>
+              <p class="cs-hero-summary">A luxury haute-botanical beauty and fragrance identity system exploring bespoke typography and tactile packaging architecture.</p>
+            </div>
+
+            <div class="cs-hero-media">
+              <div class="cs-hero-image-frame">
+                <img src="project-1.jpg" alt="Nocturne Fragrance Vessel Architecture" class="cs-hero-img">
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-meta-grid">
+            <div class="cs-meta-cell">
+              <span class="cs-cell-label">Role</span>
+              <span class="cs-cell-value">Lead Designer</span>
+            </div>
+            <div class="cs-meta-cell">
+              <span class="cs-cell-label">Tools</span>
+              <span class="cs-cell-value">Photoshop, InDesign, Illustrator</span>
+            </div>
+            <div class="cs-meta-cell">
+              <span class="cs-cell-label">Category</span>
+              <span class="cs-cell-value">Brand Identity & Packaging</span>
+            </div>
+            <div class="cs-meta-cell">
+              <span class="cs-cell-label">Year</span>
+              <span class="cs-cell-value">2026</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview Section -->
+      <section class="cs-section cs-overview-section">
+        <div class="cs-container">
+          <div class="cs-section-header">
+            <h2 class="cs-section-heading">PROJECT OVERVIEW</h2>
+          </div>
+
+          <div class="cs-overview-story">
+            <p class="cs-narrative-p">
+              Nocturne required a monolithic visual identity system that stood defiantly apart from traditional ornate perfumery. The challenge was to communicate rare nocturnal florals, dark minerality, and luxury restraint without succumbing to generic minimalism or fleeting trends.
+            </p>
+            <p class="cs-narrative-p">
+              The design challenge was to formulate an uncompromising packaging suite in matte frosted black glass, blind debossed Belgian cotton stocks, and architectural grotesque typography that communicates luxury through restraint.
+            </p>
+            <p class="cs-narrative-p">
+              Distilling the atmospheric allure of midnight botanical extraction into an uncompromising, tactile visual identity and monolithic packaging suite — engineered for both physical permanence and editorial prestige.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section: Broken into Sequential Steps -->
+      <section class="cs-section cs-process-section">
+        <div class="cs-container">
+          <div class="cs-section-header">
+            <h2 class="cs-section-heading">DESIGN PROCESS</h2>
+          </div>
+
+          <div class="cs-process-steps-grid">
+            <!-- Step 1 -->
+            <div class="cs-step-card">
+              <div class="cs-step-top">
+                <span class="cs-step-badge">Phase 1</span>
+              </div>
+              <h3 class="cs-step-title">Discovery & Botanical Research</h3>
+              <p class="cs-step-desc">
+                Conducted comprehensive visual auditing across European fragrance houses and 19th-century botanical apothecary archives. Analyzed raw ingredient palettes—vetiver, black amber, night-blooming jasmine—to build a sensory moodboard rooted in stark contrasts and geological textures.
+              </p>
+              <ul class="cs-step-bullets">
+                <li>Visual competitive matrix of 24 independent fragrance brands</li>
+                <li>Material sourcing: FSC-certified unbleached French cotton cardstocks</li>
+                <li>Formulated core creative thesis: "Heavyweight Monolithism"</li>
+                <li>Analyzed rare nocturnal floral palettes and mineral extractions</li>
+              </ul>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="cs-step-card">
+              <div class="cs-step-top">
+                <span class="cs-step-badge">Phase 2</span>
+              </div>
+              <h3 class="cs-step-title">Typography & Geometric System</h3>
+              <p class="cs-step-desc">
+                Developed an ultra-extended wordmark featuring razor-sharp structural terminals and balanced optical kerning. Established an editorial grid layout inspired by mid-century Swiss publishing, combining high-contrast serifs with razor-clean grotesque details.
+              </p>
+              <ul class="cs-step-bullets">
+                <li>Bespoke logotype drawing with custom "N" and "R" ligatures</li>
+                <li>Dual typographic hierarchy: Architectural Grotesque & Archival Serif</li>
+                <li>Comprehensive design token guide across print and digital media</li>
+                <li>Optical kerning tables tuned for large-scale packaging foil debossing</li>
+              </ul>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="cs-step-card">
+              <div class="cs-step-top">
+                <span class="cs-step-badge">Phase 3</span>
+              </div>
+              <h3 class="cs-step-title">Tactile Materiality & Packaging</h3>
+              <p class="cs-step-desc">
+                Engineered physical dielines and vessel silhouettes. Specified matte jet-black frosted glass cylinders paired with weighted gunmetal caps. Designed secondary packaging consisting of a rigid two-piece shoulder box with deep blind debossing and micro-engraved foil seal.
+              </p>
+              <ul class="cs-step-bullets">
+                <li>Precision 1:1 scale dieline drafting and folding mockups</li>
+                <li>Hot foil stamp testing on 420 GSM tactile charcoal cotton stock</li>
+                <li>Custom tamper-evident holographic seal numbering system</li>
+                <li>Matte frosted black glass bottle volume and wall thickness engineering</li>
+              </ul>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="cs-step-card">
+              <div class="cs-step-top">
+                <span class="cs-step-badge">Phase 4</span>
+              </div>
+              <h3 class="cs-step-title">Refinement & Production Specs</h3>
+              <p class="cs-step-desc">
+                Created complete production-ready prepress files, pantone spot color matching guides, and an 80-page brand guidelines binder. Formulated digital campaign visual direction, studio lighting blueprints, and exhibition art direction.
+              </p>
+              <ul class="cs-step-bullets">
+                <li>Pre-press CMYK + 2 Spot Color separation guidelines</li>
+                <li>Digital art direction guide for e-commerce and editorial showcases</li>
+                <li>Final prototype presentation deck delivered to client leadership</li>
+                <li>Archival binder with material finish swatches and prepress proofs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Deliverables Section with Image Placeholders -->
+      <section class="cs-section cs-deliverables-section">
+        <div class="cs-container">
+          <div class="cs-section-header">
+            <h2 class="cs-section-heading">FINAL DELIVERABLES</h2>
+          </div>
+
+          <div class="cs-deliverables-grid">
+            <!-- Full Hero Exhibition Frame -->
+            <div class="cs-deliverable-item cs-deliv-full">
+              <div class="cs-image-frame">
+                <img src="project-1.jpg" alt="Monolithic Fragrance Vessel & Outer Packaging Architecture" class="cs-deliv-img">
+              </div>
+              <p class="cs-deliv-caption">Monolithic fragrance vessel & outer packaging architecture</p>
+            </div>
+
+            <!-- Split 2-Column Showcase -->
+            <div class="cs-deliverable-item cs-deliv-half">
+              <div class="cs-image-frame">
+                <img src="project-brand-identity.jpg" alt="Bespoke Typographic Specimen & Spatial Grid System" class="cs-deliv-img">
+              </div>
+              <p class="cs-deliv-caption">Bespoke typographic specimen & spatial grid system</p>
+            </div>
+
+            <div class="cs-deliverable-item cs-deliv-half">
+              <div class="cs-image-frame">
+                <img src="project-chrome-fluid.jpg" alt="Matte Frosted Glass, Blind Deboss & Archival Cotton Stock" class="cs-deliv-img">
+              </div>
+              <p class="cs-deliv-caption">Matte frosted glass, blind deboss & archival cotton stock</p>
+            </div>
+
+            <!-- Tri-Column Showcase -->
+            <div class="cs-deliverable-item cs-deliv-third">
+              <div class="cs-image-frame">
+                <img src="project-holo-sculpture.jpg" alt="Embossed Foil Medallion & Seal" class="cs-deliv-img">
+              </div>
+              <p class="cs-deliv-caption">Embossed foil medallion & tamper-evident seal</p>
+            </div>
+
+            <div class="cs-deliverable-item cs-deliv-third">
+              <div class="cs-image-frame">
+                <img src="project-kinetic-spheres.jpg" alt="Atmospheric Digital Platform Design" class="cs-deliv-img">
+              </div>
+              <p class="cs-deliv-caption">Atmospheric digital platform design</p>
+            </div>
+
+            <div class="cs-deliverable-item cs-deliv-third">
+              <div class="cs-image-frame">
+                <img src="project-2.jpg" alt="Complete Brand Identity Suite" class="cs-deliv-img">
+              </div>
+              <p class="cs-deliv-caption">Complete brand identity suite</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+
+  <script>
+    // Standalone custom cursor and magnetic integration for full parity
+    (function () {
+      const cursorDot = document.getElementById('customCursor');
+      const cursorFollower = document.getElementById('cursorFollower');
+      if (!cursorDot || !cursorFollower) return;
+
+      let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+      let followerX = mouseX, followerY = mouseY;
+      let hasMoved = false;
+
+      window.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!hasMoved) {
+          hasMoved = true;
+          followerX = mouseX;
+          followerY = mouseY;
+          cursorDot.style.opacity = '1';
+          cursorFollower.style.opacity = '1';
+        }
+        cursorDot.style.transform = 'translate(' + mouseX + 'px, ' + mouseY + 'px)';
+      }, { passive: true });
+
+      function renderCursor() {
+        followerX += (mouseX - followerX) * 0.22;
+        followerY += (mouseY - followerY) * 0.22;
+        cursorFollower.style.transform = 'translate(' + followerX + 'px, ' + followerY + 'px)';
+        requestAnimationFrame(renderCursor);
+      }
+      requestAnimationFrame(renderCursor);
+
+      document.addEventListener('mouseover', function (e) {
+        if (e.target.closest('a, button, [role="button"], .cs-btn, .pill-btn, .cs-gallery-item, .cs-modal-item, .cs-swatch-item, .cs-modal-close-btn, .deck-filter-btn, .chip, [data-magnetic], input, select, textarea')) {
+          document.body.classList.add('cursor-hover');
+        } else {
+          document.body.classList.remove('cursor-hover');
+        }
+      });
+
+      document.addEventListener('mouseleave', function () {
+        cursorDot.style.opacity = '0';
+        cursorFollower.style.opacity = '0';
+      });
+
+      document.addEventListener('mouseenter', function () {
+        if (hasMoved) {
+          cursorDot.style.opacity = '1';
+          cursorFollower.style.opacity = '1';
+        }
+      });
+
+      document.querySelectorAll('[data-magnetic], .card-action-btn, .cs-back-btn, .cs-back-btn-large, .email-copy-pill, .back-to-top').forEach(function (el) {
+        el.addEventListener('mousemove', function (e) {
+          const rect = el.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          el.style.transform = 'translate(' + (x * 0.22) + 'px, ' + (y * 0.22) + 'px)';
+        });
+        el.addEventListener('mouseleave', function () {
+          el.style.transform = 'translate(0px, 0px)';
+          el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+          setTimeout(function () { el.style.transition = ''; }, 400);
+        });
+      });
+    })();
+  </script>
+
+      <!-- Seamless Return to Portfolio Script -->
+  <script>
+    (function() {
+      function returnToPortfolio(e) {
+        if (e) e.preventDefault();
+        try {
+          sessionStorage.setItem('portfolio_is_returning', 'true');
+        } catch (err) {}
+        var hasHistory = window.history.length > 1;
+        var hasReferrer = document.referrer && (document.referrer.indexOf('index.html') !== -1 || (window.location.host && document.referrer.indexOf(window.location.host) !== -1));
+
+        if (hasReferrer || hasHistory) {
+          window.history.back();
+          return;
+        }
+        window.location.href = 'index.html';
+      }
+
+      function bindBackButtons() {
+        document.querySelectorAll('.cs-back-btn, a[href*="index.html"]').forEach(function(btn) {
+          btn.addEventListener('click', returnToPortfolio);
+        });
+      }
+
+      window.addEventListener('pagehide', function() {
+        try {
+          sessionStorage.setItem('portfolio_is_returning', 'true');
+        } catch (err) {}
+      });
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bindBackButtons);
+      } else {
+        bindBackButtons();
+      }
+    })();
+  </script>
+</body>
+</html>

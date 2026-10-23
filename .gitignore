@@ -1,0 +1,10 @@
+# Temporary files
+*.bak*
+*.py
+*.json
+full_page_render.png
+screenshot_*.png
+render_transparent/
+__pycache__/
+.DS_Store
+.vercel
