@@ -1,7 +1,7 @@
 # Temporary files
 *.bak*
 *.py
-*.json
+# *.json
 full_page_render.png
 screenshot_*.png
 render_transparent/
