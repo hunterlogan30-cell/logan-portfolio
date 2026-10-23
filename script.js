@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tools: 'Blender / Illustrator / HTML5 Canvas',
       category: 'Car Wrap Design',
       categories: ['Car Wrap Design', '3D Visualization', 'Motorsport Livery'],
-      title: 'Race Car Liverys — #20 Porsche Cayman GT4',
+      title: 'Race Car Liveries — #20 Porsche Cayman GT4',
       subtitle: 'Car Wrap Design · 3D Visualization',
       summary: 'A multi-vehicle motorsport wrap identity and interactive 3D visualization suite for competition track cars.',
       heroImg: 'car-frames/frame_001.webp',
