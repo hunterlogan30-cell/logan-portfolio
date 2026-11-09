@@ -2820,3 +2820,14 @@ body.case-study-open .site-header {
         padding: 28px 22px !important;
       }
     }
+
+/* AI Playground Link Zone directly under project cards */
+.ai-playground-zone {
+  position: relative;
+  width: 100%;
+  margin-top: 60px;
+  padding: 40px 0 20px;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 10;
+}
